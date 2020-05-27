@@ -4,12 +4,13 @@ void main() {
   runApp(MyApp());
 }
 
+// Basic Form of Dart Main Function
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Welcome to Flutter',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -26,13 +27,20 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+          appBar: AppBar(
+            title: Text('Welcome to Flutter'),
+          ),
+          body: Center(
+            child: Text('Hello World'),
+          ),
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title, AppBar appBar, Center body}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
